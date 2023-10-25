@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package managing_server;
+
+// Interface exported by the server.
+service ManagingServer {
+  rpc UnitBus(stream UnitMessage) returns (stream ManagingServerMessage) {}
+}
+
+// ---- MESSAGES FROM Managing Server TO Units ---- //
+message ManagingServerMessage {
+  oneof payload {
+    UnitSubscribeRes unit_subscribe_res = 1;
+    VideoInit video_init = 2;
+  }
+}
+
+message UnitSubscribeRes {
+  string data = 1;
+}
+
+message VideoInit {
+  string config = 1;
+}
+
+// ---- MESSAGES / RESPONSES FROM Units TO Managing Server ---- //
+message UnitMessage {
+  oneof payload {
+    UnitSubscribeReq unit_subscribe_req = 1;
+    VideoInitSuccess video_init_success = 2;
+    VideoInitError video_init_error = 3;
+  }
+}
+
+message UnitSubscribeReq {
+  string unit_id = 1;
+  string config_id = 2;
+  string config = 3;
+}
+
+message VideoInitSuccess {}
+
+message VideoInitError {
+  string reason = 1;
+}
