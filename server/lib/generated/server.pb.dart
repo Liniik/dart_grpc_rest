@@ -15,7 +15,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 enum ManagingServerMessage_Payload {
   unitSubscribeRes, 
-  videoInit, 
+  init, 
   notSet
 }
 
@@ -23,14 +23,14 @@ enum ManagingServerMessage_Payload {
 class ManagingServerMessage extends $pb.GeneratedMessage {
   factory ManagingServerMessage({
     UnitSubscribeRes? unitSubscribeRes,
-    VideoInit? videoInit,
+    Init? init,
   }) {
     final $result = create();
     if (unitSubscribeRes != null) {
       $result.unitSubscribeRes = unitSubscribeRes;
     }
-    if (videoInit != null) {
-      $result.videoInit = videoInit;
+    if (init != null) {
+      $result.init = init;
     }
     return $result;
   }
@@ -40,13 +40,13 @@ class ManagingServerMessage extends $pb.GeneratedMessage {
 
   static const $core.Map<$core.int, ManagingServerMessage_Payload> _ManagingServerMessage_PayloadByTag = {
     1 : ManagingServerMessage_Payload.unitSubscribeRes,
-    2 : ManagingServerMessage_Payload.videoInit,
+    2 : ManagingServerMessage_Payload.init,
     0 : ManagingServerMessage_Payload.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagingServerMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
     ..oo(0, [1, 2])
     ..aOM<UnitSubscribeRes>(1, _omitFieldNames ? '' : 'unitSubscribeRes', subBuilder: UnitSubscribeRes.create)
-    ..aOM<VideoInit>(2, _omitFieldNames ? '' : 'videoInit', subBuilder: VideoInit.create)
+    ..aOM<Init>(2, _omitFieldNames ? '' : 'init', subBuilder: Init.create)
     ..hasRequiredFields = false
   ;
 
@@ -86,15 +86,15 @@ class ManagingServerMessage extends $pb.GeneratedMessage {
   UnitSubscribeRes ensureUnitSubscribeRes() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  VideoInit get videoInit => $_getN(1);
+  Init get init => $_getN(1);
   @$pb.TagNumber(2)
-  set videoInit(VideoInit v) { setField(2, v); }
+  set init(Init v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasVideoInit() => $_has(1);
+  $core.bool hasInit() => $_has(1);
   @$pb.TagNumber(2)
-  void clearVideoInit() => clearField(2);
+  void clearInit() => clearField(2);
   @$pb.TagNumber(2)
-  VideoInit ensureVideoInit() => $_ensure(1);
+  Init ensureInit() => $_ensure(1);
 }
 
 class UnitSubscribeRes extends $pb.GeneratedMessage {
@@ -147,8 +147,8 @@ class UnitSubscribeRes extends $pb.GeneratedMessage {
   void clearData() => clearField(1);
 }
 
-class VideoInit extends $pb.GeneratedMessage {
-  factory VideoInit({
+class Init extends $pb.GeneratedMessage {
+  factory Init({
     $core.String? config,
   }) {
     final $result = create();
@@ -157,11 +157,11 @@ class VideoInit extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  VideoInit._() : super();
-  factory VideoInit.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory VideoInit.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Init._() : super();
+  factory Init.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Init.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VideoInit', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Init', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'config')
     ..hasRequiredFields = false
   ;
@@ -170,22 +170,22 @@ class VideoInit extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  VideoInit clone() => VideoInit()..mergeFromMessage(this);
+  Init clone() => Init()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VideoInit copyWith(void Function(VideoInit) updates) => super.copyWith((message) => updates(message as VideoInit)) as VideoInit;
+  Init copyWith(void Function(Init) updates) => super.copyWith((message) => updates(message as Init)) as Init;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static VideoInit create() => VideoInit._();
-  VideoInit createEmptyInstance() => create();
-  static $pb.PbList<VideoInit> createRepeated() => $pb.PbList<VideoInit>();
+  static Init create() => Init._();
+  Init createEmptyInstance() => create();
+  static $pb.PbList<Init> createRepeated() => $pb.PbList<Init>();
   @$core.pragma('dart2js:noInline')
-  static VideoInit getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VideoInit>(create);
-  static VideoInit? _defaultInstance;
+  static Init getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Init>(create);
+  static Init? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get config => $_getSZ(0);
@@ -199,8 +199,8 @@ class VideoInit extends $pb.GeneratedMessage {
 
 enum UnitMessage_Payload {
   unitSubscribeReq, 
-  videoInitSuccess, 
-  videoInitError, 
+  initSuccess, 
+  initError, 
   notSet
 }
 
@@ -208,18 +208,18 @@ enum UnitMessage_Payload {
 class UnitMessage extends $pb.GeneratedMessage {
   factory UnitMessage({
     UnitSubscribeReq? unitSubscribeReq,
-    VideoInitSuccess? videoInitSuccess,
-    VideoInitError? videoInitError,
+    InitSuccess? initSuccess,
+    InitError? initError,
   }) {
     final $result = create();
     if (unitSubscribeReq != null) {
       $result.unitSubscribeReq = unitSubscribeReq;
     }
-    if (videoInitSuccess != null) {
-      $result.videoInitSuccess = videoInitSuccess;
+    if (initSuccess != null) {
+      $result.initSuccess = initSuccess;
     }
-    if (videoInitError != null) {
-      $result.videoInitError = videoInitError;
+    if (initError != null) {
+      $result.initError = initError;
     }
     return $result;
   }
@@ -229,15 +229,15 @@ class UnitMessage extends $pb.GeneratedMessage {
 
   static const $core.Map<$core.int, UnitMessage_Payload> _UnitMessage_PayloadByTag = {
     1 : UnitMessage_Payload.unitSubscribeReq,
-    2 : UnitMessage_Payload.videoInitSuccess,
-    3 : UnitMessage_Payload.videoInitError,
+    2 : UnitMessage_Payload.initSuccess,
+    3 : UnitMessage_Payload.initError,
     0 : UnitMessage_Payload.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnitMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
     ..oo(0, [1, 2, 3])
     ..aOM<UnitSubscribeReq>(1, _omitFieldNames ? '' : 'unitSubscribeReq', subBuilder: UnitSubscribeReq.create)
-    ..aOM<VideoInitSuccess>(2, _omitFieldNames ? '' : 'videoInitSuccess', subBuilder: VideoInitSuccess.create)
-    ..aOM<VideoInitError>(3, _omitFieldNames ? '' : 'videoInitError', subBuilder: VideoInitError.create)
+    ..aOM<InitSuccess>(2, _omitFieldNames ? '' : 'initSuccess', subBuilder: InitSuccess.create)
+    ..aOM<InitError>(3, _omitFieldNames ? '' : 'initError', subBuilder: InitError.create)
     ..hasRequiredFields = false
   ;
 
@@ -277,26 +277,26 @@ class UnitMessage extends $pb.GeneratedMessage {
   UnitSubscribeReq ensureUnitSubscribeReq() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  VideoInitSuccess get videoInitSuccess => $_getN(1);
+  InitSuccess get initSuccess => $_getN(1);
   @$pb.TagNumber(2)
-  set videoInitSuccess(VideoInitSuccess v) { setField(2, v); }
+  set initSuccess(InitSuccess v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasVideoInitSuccess() => $_has(1);
+  $core.bool hasInitSuccess() => $_has(1);
   @$pb.TagNumber(2)
-  void clearVideoInitSuccess() => clearField(2);
+  void clearInitSuccess() => clearField(2);
   @$pb.TagNumber(2)
-  VideoInitSuccess ensureVideoInitSuccess() => $_ensure(1);
+  InitSuccess ensureInitSuccess() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  VideoInitError get videoInitError => $_getN(2);
+  InitError get initError => $_getN(2);
   @$pb.TagNumber(3)
-  set videoInitError(VideoInitError v) { setField(3, v); }
+  set initError(InitError v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasVideoInitError() => $_has(2);
+  $core.bool hasInitError() => $_has(2);
   @$pb.TagNumber(3)
-  void clearVideoInitError() => clearField(3);
+  void clearInitError() => clearField(3);
   @$pb.TagNumber(3)
-  VideoInitError ensureVideoInitError() => $_ensure(2);
+  InitError ensureInitError() => $_ensure(2);
 }
 
 class UnitSubscribeReq extends $pb.GeneratedMessage {
@@ -377,13 +377,13 @@ class UnitSubscribeReq extends $pb.GeneratedMessage {
   void clearConfig() => clearField(3);
 }
 
-class VideoInitSuccess extends $pb.GeneratedMessage {
-  factory VideoInitSuccess() => create();
-  VideoInitSuccess._() : super();
-  factory VideoInitSuccess.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory VideoInitSuccess.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class InitSuccess extends $pb.GeneratedMessage {
+  factory InitSuccess() => create();
+  InitSuccess._() : super();
+  factory InitSuccess.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InitSuccess.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VideoInitSuccess', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitSuccess', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -391,26 +391,26 @@ class VideoInitSuccess extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  VideoInitSuccess clone() => VideoInitSuccess()..mergeFromMessage(this);
+  InitSuccess clone() => InitSuccess()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VideoInitSuccess copyWith(void Function(VideoInitSuccess) updates) => super.copyWith((message) => updates(message as VideoInitSuccess)) as VideoInitSuccess;
+  InitSuccess copyWith(void Function(InitSuccess) updates) => super.copyWith((message) => updates(message as InitSuccess)) as InitSuccess;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static VideoInitSuccess create() => VideoInitSuccess._();
-  VideoInitSuccess createEmptyInstance() => create();
-  static $pb.PbList<VideoInitSuccess> createRepeated() => $pb.PbList<VideoInitSuccess>();
+  static InitSuccess create() => InitSuccess._();
+  InitSuccess createEmptyInstance() => create();
+  static $pb.PbList<InitSuccess> createRepeated() => $pb.PbList<InitSuccess>();
   @$core.pragma('dart2js:noInline')
-  static VideoInitSuccess getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VideoInitSuccess>(create);
-  static VideoInitSuccess? _defaultInstance;
+  static InitSuccess getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitSuccess>(create);
+  static InitSuccess? _defaultInstance;
 }
 
-class VideoInitError extends $pb.GeneratedMessage {
-  factory VideoInitError({
+class InitError extends $pb.GeneratedMessage {
+  factory InitError({
     $core.String? reason,
   }) {
     final $result = create();
@@ -419,11 +419,11 @@ class VideoInitError extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  VideoInitError._() : super();
-  factory VideoInitError.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory VideoInitError.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  InitError._() : super();
+  factory InitError.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InitError.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VideoInitError', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitError', package: const $pb.PackageName(_omitMessageNames ? '' : 'managing_server'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false
   ;
@@ -432,22 +432,22 @@ class VideoInitError extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  VideoInitError clone() => VideoInitError()..mergeFromMessage(this);
+  InitError clone() => InitError()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VideoInitError copyWith(void Function(VideoInitError) updates) => super.copyWith((message) => updates(message as VideoInitError)) as VideoInitError;
+  InitError copyWith(void Function(InitError) updates) => super.copyWith((message) => updates(message as InitError)) as InitError;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static VideoInitError create() => VideoInitError._();
-  VideoInitError createEmptyInstance() => create();
-  static $pb.PbList<VideoInitError> createRepeated() => $pb.PbList<VideoInitError>();
+  static InitError create() => InitError._();
+  InitError createEmptyInstance() => create();
+  static $pb.PbList<InitError> createRepeated() => $pb.PbList<InitError>();
   @$core.pragma('dart2js:noInline')
-  static VideoInitError getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VideoInitError>(create);
-  static VideoInitError? _defaultInstance;
+  static InitError getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitError>(create);
+  static InitError? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get reason => $_getSZ(0);

@@ -38,8 +38,8 @@ class RestController {
 
   Future<void> _setPreset(var app) async {
     app.post('/set-preset', (Request request) async {
-      RestController().grpcService.ctrl_rest.add(ManagingServerMessage(videoInit: VideoInit(config: "message")));
-      print("return");
+      RestController().grpcService.ctrl_rest.add(ManagingServerMessage(init: Init(config: "message")));
+      print("return rest");
       return Response(204);
     });
   }

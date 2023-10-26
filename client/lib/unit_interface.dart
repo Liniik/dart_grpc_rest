@@ -44,13 +44,13 @@ class UnitInterfaceClient {
       switch (res.whichPayload()) {
         case ManagingServerMessage_Payload.unitSubscribeRes:
           break;
-        case ManagingServerMessage_Payload.videoInit:
+        case ManagingServerMessage_Payload.init:
           String? res = await videoControls.init();
           if (res == null) {
-            message.videoInitSuccess = VideoInitSuccess();
+            message.initSuccess = InitSuccess();
           } else {
             print("else");
-            message.videoInitError = VideoInitError(reason: res);
+            message.initError = InitError(reason: res);
           }
           break;
         default:

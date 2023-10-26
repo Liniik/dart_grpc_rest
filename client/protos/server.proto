@@ -11,7 +11,7 @@ service ManagingServer {
 message ManagingServerMessage {
   oneof payload {
     UnitSubscribeRes unit_subscribe_res = 1;
-    VideoInit video_init = 2;
+    Init init = 2;
   }
 }
 
@@ -19,7 +19,7 @@ message UnitSubscribeRes {
   string data = 1;
 }
 
-message VideoInit {
+message Init {
   string config = 1;
 }
 
@@ -27,8 +27,8 @@ message VideoInit {
 message UnitMessage {
   oneof payload {
     UnitSubscribeReq unit_subscribe_req = 1;
-    VideoInitSuccess video_init_success = 2;
-    VideoInitError video_init_error = 3;
+    InitSuccess init_success = 2;
+    InitError init_error = 3;
   }
 }
 
@@ -38,8 +38,8 @@ message UnitSubscribeReq {
   string config = 3;
 }
 
-message VideoInitSuccess {}
+message InitSuccess {}
 
-message VideoInitError {
+message InitError {
   string reason = 1;
 }
